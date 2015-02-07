@@ -1,4 +1,4 @@
-#This script creates plot1.png
+#This script creates plot2.png
 
 #Read the data into R
 dat <- read.table("./household_power_consumption.txt", header = T, sep = ";", na.strings = "?")
@@ -15,6 +15,6 @@ end_date <- as.Date("2007-02-02")
 dat <- dat[dat$Date >= start_date & dat$Date <= end_date, ]
 
 #Create the plot
-png("plot1.png", width = 480, height = 480)
-hist(dat$Global_active_power, xlab = "Global Active Power (kilowatts)", main = "Global Active Power", col = "red")
+png("plot2.png", width = 480, height = 480)
+plot(dat$datetime, dat$Global_active_power, type="l", xlab="", ylab="Global Active Power (kilowatts)")
 dev.off()
